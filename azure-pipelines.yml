@@ -27,9 +27,11 @@ steps:
     CleanTargetFolder: true
     OverWrite: true
 
-- task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+#- task: PublishBuildArtifacts@1    
+#  displayName: 'Publish Artifact: drop'
+#  inputs:
+#    PathtoPublish: '$(build.artifactstagingdirectory)'
+#    ArtifactName: 'drop'
+#    publishLocation: 'Container'
+
+- task: PublishBuildArtifacts@1
