@@ -16,27 +16,16 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+    npm install --save core-js@^3
     npm run build
   displayName: 'npm install and build'
 
-# Copy files
-# Copy files from a source folder to a target folder using patterns matching file paths (not folder paths)
-- task: CopyFiles@2
-  inputs:
-    #sourceFolder: # Optional
-    contents: '**' 
-    targetFolder: '$(build.artifactstagingdirectory)'
 - task: CopyFiles@2
   inputs:
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
     OverWrite: true
-    #cleanTargetFolder: false # Optional
-    #overWrite: false # Optional
-    #flattenFolders: false # Optional
-    #preserveTimestamp: false # Optional
 
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
